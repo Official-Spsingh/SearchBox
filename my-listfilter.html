@@ -13,7 +13,7 @@
           
         </style>
         <input value="{{prop1::input}}" placeholder="Search Anything..." />
-        <h2>Hello [[prop1]]</h2>
+       
         <ul id="list">
             <li>Shubham Pratap Singh</li>
             <li>Vandana Gupta</li>
@@ -28,6 +28,12 @@
             <li>Supreme Kumar</li>
             <li>Shubham Singh</li>
             <li>Vikash Kumar</li>
+            <li>Bipul Singh</li>
+            <li>Vikram Anand</li>
+            <li>Abhisekh Kumar</li>
+            <li>Pawan Tiwari</li>
+            <li>Manjistha Roy</li>
+            <li>Swapnil Kumar</li>
         </ul>
     </template>
     <script>
@@ -41,7 +47,8 @@
                 },
             },
             filterList: function() {
-                var items = this.$.list.children;
+               // var items = this.$.list.children;
+               var items=document.querySelectorAll("li");
                 for (var i = 0; i < items.length; i++) {
                     var item = Polymer.dom(items[i]);
                     if (item.textContent.toLowerCase().includes(this.prop1)) {
