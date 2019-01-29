@@ -1,0 +1,84 @@
+/* Styles go here */
+
+  body{
+              background:linear-gradient(to top left, #ff3399 1%, #00ffcc 98%);
+              background-repeat:no-repeat;
+              background-size:cover;
+              width:100%;
+              min-height:600px;
+              font-family:arial;
+              
+            }
+              input{
+              width:50%;
+              padding:10px;
+              margin-left:24%;
+              margin-right:24%;
+              margin-top:4%;
+              background:transparent;
+              border:2px solid #555;
+              color:#eee;
+            }
+            h2{
+              text-align:center;
+              font-size:24px;
+              font-family:georgia;
+              color:#eee;
+              letter-spacing:3px;
+            }
+            #list{
+              margin-left:25%;
+              margin-right:25%;
+              width:47%;
+              list-style-type:none;
+              border:5px solid #888;
+              box-shadow:0 35px 20px rgba(0,0,0,0.2);
+              max-height:350px;
+              overflow:auto;
+              
+            }
+            li{
+              padding-top:8px;
+                padding-bottom:8px;
+                padding-left:5%;
+                padding-right:14%;
+                width:79%;
+              font-size:3vw;
+              
+              
+            }
+            li:hover{
+              animation:mov 1s;
+            }
+            @keyframes mov{
+              0%{
+                transform:rotatex(0deg);
+              }
+           
+                100%{
+                transform:rotatex(360deg);
+              
+              }
+             
+            }
+            
+            
+    
+
+       #list::-webkit-scrollbar
+         {
+           	width: 3%;
+	          background-color:rgba(0,0,0,0.1);
+          }
+
+        #list::-webkit-scrollbar-thumb
+           {
+	           border-radius: 10px;
+	                   background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+            }
+            

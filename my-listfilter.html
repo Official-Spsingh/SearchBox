@@ -1,0 +1,56 @@
+<link rel="import"  href="https://polygit.org/polymer+^1.9.1/webcomponentsjs+^0.7.0/iron-*+polymerelements+^1.0.0/components/polymer/polymer.html">
+<!-- import the iron-input custom element -->
+<link rel="import" href="https://polygit.org/polymer+^1.9.1/webcomponentsjs+^0.7.0/iron-*+polymerelements+^1.0.0/components/iron-input/iron-input.html">
+
+<dom-module id="my-listfilter">
+    <template>
+        <style>
+      
+            .hidden {
+                display: none;
+            }
+          
+          
+        </style>
+        <input value="{{prop1::input}}" placeholder="Search Anything..." />
+        <h2>Hello [[prop1]]</h2>
+        <ul id="list">
+            <li>Shubham Pratap Singh</li>
+            <li>Vandana Gupta</li>
+            <li>Pawan Patel</li>
+            <li>Manish Pandey</li>
+            <li>Sonu Kejriwal</li>
+            <li>Aashish Chanchlani</li>
+            <li>Harshit Rathore</li>
+            <li>Bipul Kumar</li>
+            <li>Ankit Sah</li>
+            <li>Raunak Anshuman</li>
+            <li>Supreme Kumar</li>
+            <li>Shubham Singh</li>
+            <li>Vikash Kumar</li>
+        </ul>
+    </template>
+    <script>
+        Polymer({
+            is: 'my-listfilter',
+            properties: {
+                prop1: {
+                    type: String,
+                    value: '',
+                    observer: 'filterList'
+                },
+            },
+            filterList: function() {
+                var items = this.$.list.children;
+                for (var i = 0; i < items.length; i++) {
+                    var item = Polymer.dom(items[i]);
+                    if (item.textContent.toLowerCase().includes(this.prop1)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                }
+            }
+        });
+    </script>
+</dom-module>
